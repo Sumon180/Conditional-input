@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditional Form</title>
+</head>
+<body>
+    <p>Enter bangla marks :
+        <input type="text" id="input1">
+    </p>
+
+    <p>Enter english marks :
+        <input type="text" id="input2">
+    </p>
+
+    <script>
+        let input1 = document.getElementById('input1');
+        let input2 = document.getElementById('input2');
+
+        
+        input1.addEventListener('input',() => {
+            let bangla = input1.value;
+            if(bangla > 100 || bangla < 0){
+                input1.style.backgroundColor='red';
+            }
+            else{
+                input1.style.backgroundColor='';
+            }
+        });
+
+
+        input2.addEventListener('input',() => {
+            let english = input2.value;
+            if(english > 100){
+                input2.style.backgroundColor='green';
+            }
+            else if(english < 33 && english > 0){
+                input2.style.backgroundColor='red';
+            }
+            else if(english < 0){
+                input2.style.backgroundColor='red';
+            }
+            else{
+                input2.style.backgroundColor='';
+            }
+        })
+
+    </script>
+    
+</body>
+</html>
